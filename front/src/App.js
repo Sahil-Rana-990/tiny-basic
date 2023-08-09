@@ -5,7 +5,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import axios from "axios";
 
 export default function App() {
-  const htmlParser=new Parser();
+  //const htmlParser=new Parser();
   //          -------------------------------- screct -----------------------------------------------
   const PROJECT_CLOUD_NAME = "project";
   const PROJECT_CLOUD_API_KEY = "771814256556894";
