@@ -40,7 +40,7 @@ export default function App() {
   return (
     <>
       <h1></h1>
-      {JSON.parse(localStorage.getItem("commentArray")).map((val, i) => {
+      {JSON.parse(localStorage.getItem("commentArray")) || [].map((val, i) => {
         return (
           <div
             key={i}
