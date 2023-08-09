@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
-import HtmlParser from "html-react-parser";
-import DOMPurify from 'dompurify';
+//import HtmlParser from "html-react-parser";
+//import DOMPurify from 'dompurify';
 import axios from "axios";
 
 export default function App() {
@@ -56,7 +56,7 @@ export default function App() {
             <h4 style={{ width: "100%", backgroundColor: "yellow" }}>
               Your Comment
             </h4>
-            <div>{HtmlParser(val)}</div>
+            <div dangerouslySetInnerHTML={{__html:val}}></div>
           </div>
         );
       })}
