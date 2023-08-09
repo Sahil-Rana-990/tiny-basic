@@ -52,7 +52,7 @@ app.post("/api/getimage", async (req, res) => {
   });
   data.save().then((result) => {
     console.log("data stored !!");
-    res.send({ imaeURL: `http://localhost:4000/api/image/${uuid4}` });
+    res.send({ imaeURL: `https://tiny-basic-api.vercel.app/api/image/${uuid4}` });
   });
 });
 
