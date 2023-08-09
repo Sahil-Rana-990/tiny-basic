@@ -56,7 +56,7 @@ export default function App() {
             <h4 style={{ width: "100%", backgroundColor: "yellow" }}>
               Your Comment
             </h4>
-            <div>{HtmlParser("<h2>Hello World!</h2>")}</div>
+            
           </div>
         );
       })}
