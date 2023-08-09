@@ -117,7 +117,7 @@ export default function App() {
                 let data64image = await readFileAsDataURL(file);
                 console.log(data64image);
 
-                const res = await fetch("http://localhost:4000/api/getimage", {
+                const res = await fetch("https://tiny-basic-api.vercel.app/api/getimage", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
