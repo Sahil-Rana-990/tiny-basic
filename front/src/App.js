@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import {Parser} from "html-to-react";
+import DOMPurify from 'dompurify';
 import axios from "axios";
 
 export default function App() {
@@ -55,7 +56,7 @@ export default function App() {
             <h4 style={{ width: "100%", backgroundColor: "yellow" }}>
               Your Comment
             </h4>
-            <div>{htmlParser.parse(val)}</div>
+            <div dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(val)}}></div>
           </div>
         );
       })}
