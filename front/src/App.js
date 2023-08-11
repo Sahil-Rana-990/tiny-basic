@@ -18,11 +18,6 @@ export default function App() {
     content: "",
   });
   let [files, setfiles] = useState(0);
-
-  useEffect(() => {
-    localStorage.setItem("commentArray", JSON.stringify([]));
-  }, []);
-
   const storedData = () => {
     if (editorRef.current) {
       let editortext = editorRef.current.getContent();
