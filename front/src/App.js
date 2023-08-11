@@ -34,31 +34,26 @@ export default function App() {
     }
   };
 
-  async function setPostImage() {
-    const formdata = new FormData();
-    formdata.append("image", files);
-  }
+   const convertHTMLStrToReactComponent=(id,htmlstr)=>{
+    setTimeout(()=>{
+      document.querySelector(`.com${id}`).innerHTML=htmlstr;
+    },0   )
+  } 
   return (
     <>
-      <h1></h1>
-      {JSON.parse(localStorage.getItem("commentArray")) || [].map((val, i) => {
-        return (
-          <div
-            key={i}
-            style={{
-              margin: "20px",
-              width: "500px",
-              backgroundColor: "white",
-              border: "1px solid black",
-              padding: "20px",
-            }}
-          >
-            <h4 style={{ width: "100%", backgroundColor: "yellow" }}>
-              Your Comment
-            </h4>
-            
-          </div>
-        );
+     
+      {JSON.parse(localStorage.getItem("commentArray")).map((val, i) => {
+        
+        if(val===""){
+          return;
+        }else{
+          return(
+            <div key={i}>
+              <h1 className={`com${i}`}></h1>
+              {convertHTMLStrToReactComponent(i,val)}
+            </div>
+          )
+        }
       })}
 
       <input
