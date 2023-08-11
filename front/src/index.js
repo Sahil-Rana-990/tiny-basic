@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
@@ -12,6 +12,9 @@ const client = new ApolloClient({
   uri: `http://localhost:4000/`,
   cache: new InMemoryCache(),
 });
+useEffect(() => {
+    localStorage.setItem("commentArray", JSON.stringify([]));
+  }, []);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
